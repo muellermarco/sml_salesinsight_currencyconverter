@@ -1,0 +1,43 @@
+unique_name: dim_currencyrate
+object_type: dimension
+label: Dim Currencyrate
+hierarchies:
+  - unique_name: currencyrate_hierarchy
+    label: Currencyrate Hierarchy
+    levels:
+      - unique_name: currencyrate_level
+level_attributes:
+  - unique_name: currencyrate_level
+    label: Currencyrate
+    contains_unique_names: false
+    dataset: FACTCURRENCYRATE
+    is_unique_key: false
+    key_columns:
+      - currencykey
+      - datekey
+    name_column: datekey
+relationships:
+  - unique_name: FACTCURRENCYRATE_datekey_to_dim_date_date
+    from:
+      dataset: FACTCURRENCYRATE
+      hierarchy: currencyrate_hierarchy
+      join_columns:
+        - datekey
+      level: currencyrate_level
+    to:
+      dimension: dim_date
+      level: date
+    type: embedded
+  - unique_name: FACTCURRENCYRATE_currencykey_to_dim_currency_currency
+    from:
+      dataset: FACTCURRENCYRATE
+      hierarchy: currencyrate_hierarchy
+      join_columns:
+        - currencykey
+      level: currencyrate_level
+    role_play: From {0}
+    to:
+      dimension: dim_currency
+      level: currency
+    type: embedded
+type: standard

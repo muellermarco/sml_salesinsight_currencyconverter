@@ -3,7 +3,10 @@ object_type: model
 label: Currency Conversion ManyToMany
 dimensions:
   - dim_rate
-metrics: []
+metrics:
+  - unique_name: m_averagerate2_avg
+  - unique_name: m_salesamount_sum
+  - unique_name: m_sales_amount_target_sum
 relationships:
   - unique_name: >-
       FACTINTERNETSALES_orderdatekey_to_Fact Currency Rate From To_Fact Currency

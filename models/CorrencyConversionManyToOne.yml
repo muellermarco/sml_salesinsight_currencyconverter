@@ -1,0 +1,17 @@
+unique_name: CorrencyConversionManyToOne
+object_type: model
+label: Corrency Conversion ManyToOne
+metrics:
+  - unique_name: m_averagerate_avg
+  - unique_name: m_salesamount_sum
+  - unique_name: m_sales_amount_usd_sum
+relationships:
+  - unique_name: FACTINTERNETSALES_currencykey_to_dim_currencyrate_currencyrate_level
+    from:
+      dataset: FACTINTERNETSALES
+      join_columns:
+        - currencykey
+        - orderdatekey
+    to:
+      dimension: dim_currencyrate
+      level: currencyrate_level

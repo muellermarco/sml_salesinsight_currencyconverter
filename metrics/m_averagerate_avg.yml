@@ -1,0 +1,6 @@
+unique_name: m_averagerate_avg
+object_type: metric
+label: Average Rate
+calculation_method: average
+column: averagerate
+dataset: FACTCURRENCYRATE

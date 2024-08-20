@@ -1,0 +1,6 @@
+unique_name: m_sales_amount_usd_sum
+object_type: metric_calc
+label: Sales Amount USD
+expression: '[Measures].[m_salesamount_sum]*[Measures].[m_averagerate_avg]'
+is_hidden: false
+mdx_aggregate_function: SUM

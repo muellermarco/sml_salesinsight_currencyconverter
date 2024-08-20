@@ -1,0 +1,16 @@
+unique_name: FACTCURRENCYRATE
+object_type: dataset
+label: FACTCURRENCYRATE
+columns:
+  - name: currencykey
+    data_type: decimal(38,0)
+  - name: datekey
+    data_type: decimal(38,0)
+  - name: averagerate
+    data_type: double
+  - name: endofdayrate
+    data_type: double
+  - name: fulldate
+    data_type: datetime
+connection_id: con_SE_DEMO_LIBRARY_AS_ADVENTURE
+table: FACTCURRENCYRATE

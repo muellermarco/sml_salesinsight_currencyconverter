@@ -1,0 +1,6 @@
+unique_name: m_sales_amount_target_sum
+object_type: metric_calc
+label: Sales Amount Target Currency
+expression: '[Measures].[m_salesamount_sum]*[Measures].[m_averagerate2_avg]'
+is_hidden: false
+mdx_aggregate_function: SUM
