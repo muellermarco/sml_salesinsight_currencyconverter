@@ -1,0 +1,25 @@
+unique_name: Dim Currency QDS
+object_type: dataset
+label: Dim Currency QDS
+columns:
+  - name: currencykey
+    data_type: decimal(38,0)
+  - name: currencyname
+    data_type: string
+  - name: currencyalternatekey
+    data_type: string
+  - name: Currency Base
+    data_type: string
+connection_id: con_SE_DEMO_LIBRARY_AS_ADVENTURE
+sql: |-
+  Select 
+  cur."currencykey"
+  ,cur."currencyname"
+  ,cur."currencyalternatekey"
+  ,'USD' as "Currency Base"
+  from 
+  se_demo_library.as_adventure.dimcurrency cur
+  join se_demo_library.as_adventure.factinternetsales fact
+  on cur."currencykey" = fact."currencykey"
+  group by
+  1,2,3,4

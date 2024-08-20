@@ -1,0 +1,56 @@
+unique_name: Fact Currency Rate From To
+object_type: dimension
+label: Fact Currency Rate From To
+hierarchies:
+  - unique_name: Fact Currency Rate From To Hierarchy
+    label: Fact Currency Rate From To Hierarchy
+    levels:
+      - unique_name: Fact Currency Rate From To Level
+level_attributes:
+  - unique_name: Fact Currency Rate From To Level
+    label: Fact Currency Rate From To Level
+    contains_unique_names: false
+    dataset: Factcurrencyrate_from_to
+    is_hidden: true
+    is_unique_key: false
+    key_columns:
+      - CURRENCYKEY_FROM
+      - DATEKEY
+    name_column: DATEKEY
+relationships:
+  - unique_name: Factcurrencyrate_from_to_CURRENCYKEY_FROM_to_dim_currency_currency
+    from:
+      dataset: Factcurrencyrate_from_to
+      hierarchy: Fact Currency Rate From To Hierarchy
+      join_columns:
+        - CURRENCYKEY_FROM
+      level: Fact Currency Rate From To Level
+    role_play: From {0}
+    to:
+      dimension: dim_currency
+      level: currency
+    type: embedded
+  - unique_name: Factcurrencyrate_from_to_CURRENCYKEY_TO_to_dim_currency_currency
+    from:
+      dataset: Factcurrencyrate_from_to
+      hierarchy: Fact Currency Rate From To Hierarchy
+      join_columns:
+        - CURRENCYKEY_TO
+      level: Fact Currency Rate From To Level
+    role_play: To {0}
+    to:
+      dimension: dim_currency
+      level: currency
+    type: embedded
+  - unique_name: Factcurrencyrate_from_to_DATEKEY_to_dim_date_date
+    from:
+      dataset: Factcurrencyrate_from_to
+      hierarchy: Fact Currency Rate From To Hierarchy
+      join_columns:
+        - DATEKEY
+      level: Fact Currency Rate From To Level
+    to:
+      dimension: dim_date
+      level: date
+    type: embedded
+type: standard

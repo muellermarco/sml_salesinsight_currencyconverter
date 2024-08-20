@@ -1,0 +1,18 @@
+unique_name: dim_rate
+object_type: dimension
+label: Dim Rate
+hierarchies:
+  - unique_name: rate_hierarchy
+    label: Rate Hierarchy
+    levels:
+      - unique_name: rate
+is_degenerate: true
+level_attributes:
+  - unique_name: rate
+    label: Rate
+    contains_unique_names: false
+    dataset: Factcurrencyrate_from_to
+    key_columns:
+      - AVARAGERATE
+    name_column: AVARAGERATE
+type: standard

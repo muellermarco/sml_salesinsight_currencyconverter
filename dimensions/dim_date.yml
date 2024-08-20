@@ -1,0 +1,39 @@
+unique_name: dim_date
+object_type: dimension
+label: Dim Date
+hierarchies:
+  - unique_name: date_month_hierarchy
+    label: Date Month
+    levels:
+      - unique_name: year
+      - unique_name: month
+      - unique_name: date
+level_attributes:
+  - unique_name: date
+    label: Date
+    contains_unique_names: false
+    dataset: DATECUSTOM
+    is_unique_key: false
+    key_columns:
+      - datekey
+    name_column: date_name
+    time_unit: day
+  - unique_name: month
+    label: Month
+    contains_unique_names: false
+    dataset: DATECUSTOM
+    is_unique_key: false
+    key_columns:
+      - month
+    name_column: month_name
+    time_unit: month
+  - unique_name: year
+    label: Year
+    contains_unique_names: false
+    dataset: DATECUSTOM
+    is_unique_key: false
+    key_columns:
+      - year
+    name_column: year_name
+    time_unit: year
+type: time

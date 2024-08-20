@@ -1,0 +1,26 @@
+unique_name: Factcurrencyrate_from_to
+object_type: dataset
+label: Factcurrencyrate_from_to
+columns:
+  - name: CURRENCYKEY_FROM
+    data_type: decimal(38,0)
+  - name: CURRENCYKEY_TO
+    data_type: decimal(38,0)
+  - name: DATEKEY
+    data_type: decimal(38,0)
+  - name: AVARAGERATE
+    data_type: double
+connection_id: con_SE_DEMO_LIBRARY_AS_ADVENTURE
+sql: |-
+  Select 
+  curFrom."currencykey" as currencykey_from,
+  curTo."currencykey" as currencykey_to,
+  curFrom."datekey" as datekey,
+  curFrom."averagerate" / curTo."averagerate" as avaragerate
+  from 
+  se_demo_library.as_adventure.factcurrencyrate curFrom
+  join se_demo_library.as_adventure.factcurrencyrate curTo
+  on curTo."datekey" = curfrom."datekey"
+  where
+  curfrom."currencykey" in (6,19,29,39,98,100)
+  and curto."currencykey" in (6,19,29,39,98,100)

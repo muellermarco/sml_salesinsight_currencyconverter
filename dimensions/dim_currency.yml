@@ -1,0 +1,52 @@
+unique_name: dim_currency
+object_type: dimension
+label: Dim Currency
+hierarchies:
+  - unique_name: currency hierarchy
+    label: Currency Hierarchy
+    levels:
+      - unique_name: currency
+        secondary_attributes:
+          - unique_name: currency_base
+            label: Currency Base
+            contains_unique_names: false
+            dataset: Dim Currency QDS
+            is_unique_key: false
+            key_columns:
+              - Currency Base
+            name_column: Currency Base
+          - unique_name: currencykey
+            label: Currency Key
+            contains_unique_names: false
+            dataset: Dim Currency QDS
+            is_unique_key: false
+            key_columns:
+              - currencykey
+            name_column: currencykey
+          - unique_name: currencyname
+            label: Currency Name
+            contains_unique_names: false
+            dataset: Dim Currency QDS
+            is_unique_key: false
+            key_columns:
+              - currencyname
+            name_column: currencyname
+          - unique_name: currency_iso
+            label: Currency ISO
+            contains_unique_names: false
+            dataset: Dim Currency QDS
+            is_unique_key: false
+            key_columns:
+              - currencyalternatekey
+            name_column: currencyalternatekey
+level_attributes:
+  - unique_name: currency
+    label: Currency
+    contains_unique_names: false
+    dataset: Dim Currency QDS
+    is_unique_key: false
+    key_columns:
+      - currencykey
+    name_column: currencyalternatekey
+    sort_column: currencykey
+type: standard

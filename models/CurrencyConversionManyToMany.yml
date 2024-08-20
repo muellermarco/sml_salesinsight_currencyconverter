@@ -1,0 +1,18 @@
+unique_name: CurrencyConversionManyToMany
+object_type: model
+label: Currency Conversion ManyToMany
+dimensions:
+  - dim_rate
+metrics: []
+relationships:
+  - unique_name: >-
+      FACTINTERNETSALES_orderdatekey_to_Fact Currency Rate From To_Fact Currency
+      Rate From To Level
+    from:
+      dataset: FACTINTERNETSALES
+      join_columns:
+        - currencykey
+        - orderdatekey
+    to:
+      dimension: Fact Currency Rate From To
+      level: Fact Currency Rate From To Level
