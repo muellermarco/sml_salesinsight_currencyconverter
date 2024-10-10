@@ -42,7 +42,7 @@ relationships:
       dimension: dim_currency
       level: currency
     type: embedded
-  - unique_name: Factcurrencyrate_from_to_DATEKEY_to_dim_date_date
+  - unique_name: Factcurrencyrate_from_to_DATEKEY_to_Date Dimension_DayMonth
     from:
       dataset: Factcurrencyrate_from_to
       hierarchy: Fact Currency Rate From To Hierarchy
@@ -50,7 +50,7 @@ relationships:
         - DATEKEY
       level: Fact Currency Rate From To Level
     to:
-      dimension: dim_date
-      level: date
+      dimension: Date Dimension
+      level: DayMonth
     type: embedded
 type: standard

@@ -17,17 +17,6 @@ level_attributes:
       - datekey
     name_column: datekey
 relationships:
-  - unique_name: FACTCURRENCYRATE_datekey_to_dim_date_date
-    from:
-      dataset: FACTCURRENCYRATE
-      hierarchy: currencyrate_hierarchy
-      join_columns:
-        - datekey
-      level: currencyrate_level
-    to:
-      dimension: dim_date
-      level: date
-    type: embedded
   - unique_name: FACTCURRENCYRATE_currencykey_to_dim_currency_currency
     from:
       dataset: FACTCURRENCYRATE
@@ -39,5 +28,16 @@ relationships:
     to:
       dimension: dim_currency
       level: currency
+    type: embedded
+  - unique_name: FACTCURRENCYRATE_datekey_to_Date Dimension_DayMonth
+    from:
+      dataset: FACTCURRENCYRATE
+      hierarchy: currencyrate_hierarchy
+      join_columns:
+        - datekey
+      level: currencyrate_level
+    to:
+      dimension: Date Dimension
+      level: DayMonth
     type: embedded
 type: standard

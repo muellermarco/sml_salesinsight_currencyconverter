@@ -19,3 +19,19 @@ relationships:
     to:
       dimension: Fact Currency Rate From To
       level: Fact Currency Rate From To Level
+  - unique_name: FACTINTERNETSALES_productkey_to_Product Dimension_Product Name
+    from:
+      dataset: FACTINTERNETSALES
+      join_columns:
+        - productkey
+    to:
+      dimension: Product Dimension
+      level: Product Name
+  - unique_name: FACTINTERNETSALES_customerkey_to_Customer Dimension_Customer Name
+    from:
+      dataset: FACTINTERNETSALES
+      join_columns:
+        - customerkey
+    to:
+      dimension: Customer Dimension
+      level: Customer Name
