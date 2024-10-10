@@ -12,5 +12,5 @@ columns:
     data_type: double
   - name: fulldate
     data_type: datetime
-connection_id: con_SE_DEMO_LIBRARY_AS_ADVENTURE
+connection_id: common_connection
 table: FACTCURRENCYRATE

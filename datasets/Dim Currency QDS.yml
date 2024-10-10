@@ -10,7 +10,7 @@ columns:
     data_type: string
   - name: Currency Base
     data_type: string
-connection_id: con_SE_DEMO_LIBRARY_AS_ADVENTURE
+connection_id: common_connection
 sql: |-
   Select 
   cur."currencykey"

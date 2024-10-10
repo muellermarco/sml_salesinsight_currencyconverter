@@ -10,7 +10,7 @@ columns:
     data_type: decimal(38,0)
   - name: AVARAGERATE
     data_type: double
-connection_id: con_SE_DEMO_LIBRARY_AS_ADVENTURE
+connection_id: common_connection
 sql: |-
   Select 
   curFrom."currencykey" as currencykey_from,

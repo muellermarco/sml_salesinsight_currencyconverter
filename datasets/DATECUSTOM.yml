@@ -200,5 +200,5 @@ columns:
     data_type: datetime
   - name: rpt_year_lykey
     data_type: datetime
-connection_id: con_SE_DEMO_LIBRARY_AS_ADVENTURE
+connection_id: common_connection
 table: DATECUSTOM

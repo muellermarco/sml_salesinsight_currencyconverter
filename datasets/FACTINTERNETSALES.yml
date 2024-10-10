@@ -30,5 +30,5 @@ columns:
     data_type: decimal(38,0)
   - name: currencykey
     data_type: decimal(38,0)
-connection_id: con_SE_DEMO_LIBRARY_AS_ADVENTURE
+connection_id: common_connection
 table: FACTINTERNETSALES
